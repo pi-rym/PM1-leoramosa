@@ -29,7 +29,9 @@ class Repository {
   // un metodo que le permita filtrar las activdades
 
   //eliminar activities
-  deleteActivity() {}
+  deleteActivity(id) {
+    this.activities = this.activities.filter((activity) => activity.id !== id);
+  }
 }
 
 const RepositoryLeo = new Repository();
@@ -37,4 +39,6 @@ const RepositoryLeo = new Repository();
 RepositoryLeo.createActivity("Leo", "ramos", "imgleo");
 console.log(RepositoryLeo);
 RepositoryLeo.createActivity("martin", "ramos", "imgleo");
+console.log(RepositoryLeo);
+RepositoryLeo.deleteActivity(0);
 console.log(RepositoryLeo);
