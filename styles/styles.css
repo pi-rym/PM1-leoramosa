@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url(../assets/fonts/Inter-Bold.ttf);
+  font-weight: bold;
+  font-style: bold;
+}
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url(../assets/fonts/Inter-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url(../assets/fonts/Inter-Medium.ttf);
+}
+@font-face {
+  font-family: "Barlow", sans-serif;
+  src: url(../assets/fonts/Barlow-Regular.ttf);
+  font-style: normal;
+}
+
+body {
+  background: #1c1c1c;
+  color: #f8fafc;
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+}
+
+header {
+  background: url(../assets/images/background.webp) center center,
+    linear-gradient(90deg, #1c1c1c 65%, rgba(128, 46, 234, 0.08));
+  background-size: cover;
+}
+.container {
+  max-width: 1440px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.dev_content {
+  text-align: left;
+}
+.dev_content h1 {
+  font-size: 150px;
+  background-image: radial-gradient(
+    69.86% 2796.42% at 85% 50%,
+    hsla(0, 0%, 96%, 0.53) 0,
+    #fff 100%
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.dev_content h2 {
+  font-size: 60px;
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+  padding-bottom: 40px;
+  color: #73d9ff;
+}
+
+.dev_description,
+.dev_profession {
+  font-family: "Barlow", sans-serif;
+  padding: 30px;
+  border-radius: 8px;
+  border: 2px solid #303031;
+  background-image: linear-gradient(193deg, #423a4e78 0%, #1c1c1c00 100%);
+  box-shadow: 0 0 0 0 #ffffff;
+  font-size: 14px;
+  max-width: 350px;
+}
+
+.dev_profession {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+.dev_description,
+.dev_profession {
+  line-height: 1.5;
+}
+
+.dev_selector {
+  color: #ec91ff;
+}
+
+.dev_comment {
+  color: #586c7a;
+}
+
+.dev_value {
+  color: #73d9ff;
+}
+.skills .content {
+  display: flex;
+}
+
+.skills_content {
+  padding: 29px;
+  border: 1px solid #303031;
+  border-radius: 15px;
+  margin: 0 20px;
+  filter: grayscale(0);
+  transition: 0.4s ease-in-out;
+}
+
+.skills h1 {
+  font-size: 35px;
+  font-weight: 400;
+  padding-bottom: 30px;
+  color: #9f9f9f;
+}
+
+.skills_content:hover {
+  box-shadow: 0px 1px 11px 1px #ffffff42;
+}
+
+.skills_content img {
+  max-width: 155px;
+}
+
+.container.skills_container {
+  flex-direction: column;
+  align-items: center;
+}
