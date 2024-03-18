@@ -81,24 +81,29 @@
         <div class="container">
           <p></p>
           <div class="content_form">
-            <form action="">
+            <form>
               <label for="">Agregue una actividad:</label>
-              <input type="text" placeholder="Nombre de la actidad" />
+              <input
+                id="input_title"
+                type="text"
+                placeholder="Nombre de la actidad"
+              />
               <textarea
                 name=""
-                id=""
+                id="area_description"
                 cols="30"
                 rows="10"
                 placeholder="Descripción de la actividad:"
               ></textarea>
               <input
+                id="input_img"
                 type="text"
                 src=""
                 alt=""
                 placeholder="Link de la imágen:"
               />
               <div class="form_button">
-                <button>Agregar actividad</button>
+                <button id="add_button">Agregar actividad</button>
               </div>
             </form>
           </div>
@@ -140,8 +145,8 @@
                   <img src="./assets/images/card.jpeg" alt="" />
                 </div>
                 <div class="card_button">
-                  <div><button class="edit">Edit</button></div>
-                  <div><button class="delete">Delete</button></div>
+                  <button class="edit">Edit</button>
+                  <button class="delete">Delete</button>
                 </div>
               </div>
             </div>
