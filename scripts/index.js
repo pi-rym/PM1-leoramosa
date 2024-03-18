@@ -13,6 +13,8 @@ class Repository {
     this.id = 0;
   }
 
+  //Metodos
+
   //un metodo que reciba datos de una actividad, cree una actividad nueva y la guarde en su array
   getAllActivities() {
     return this.activities;
@@ -42,3 +44,49 @@ RepositoryLeo.createActivity("martin", "ramos", "imgleo");
 console.log(RepositoryLeo);
 RepositoryLeo.deleteActivity(0);
 console.log(RepositoryLeo);
+
+function cardActivity(activity) {
+  const { id, title, description, imgUrl } = activity;
+  const cardTitle = document.createElement("p");
+  cardTitle.innerHTML = title;
+  cardTitle.className = "card_title";
+
+  const cardDescription = document.createElement("p");
+  cardDescription.innerHTML = description;
+  cardDescription.className = "card_description";
+
+  const cardImg = document.createElement("img");
+  cardImg.src = imgUrl;
+  cardImg.className = "card_img";
+
+  const containerCard = document.createElement("div");
+  containerCard.appendChild(contentCard);
+  containerCard.className = "card_activity";
+  containerCard.id = id;
+
+  const contentCard = document.createElement("div");
+  contentCard.appendChild(contentCardInfo);
+  contentCard.appendChild(contentCardImg);
+  contentCard.appendChild(contentCardButton);
+  contentCard.className = "card_content";
+
+  const contentCardInfo = document.createElement("div");
+  contentCardInfo.appendChild(cardTitle);
+  contentCardInfo.appendChild(cardDescription);
+  contentCardInfo.className = "card_inf";
+
+  const contentCardImg = document.createElement("div");
+  contentCardImg.appendChild(cardImg);
+  contentCardImg.className = "card_img";
+
+  const contentCardButton = document.createElement("div");
+  contentCardButton.className = "card_button";
+  return containerCard;
+}
+
+function allActivities() {
+  const containerActivities = document.getElementById("container_activities");
+  containerActivities.innerHTML = "";
+
+  const activities = Repository.getAllActivities();
+}
