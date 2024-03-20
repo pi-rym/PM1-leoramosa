@@ -76,8 +76,8 @@
           </div>
         </div>
       </section>
-      <section>
-        <h1>Skills</h1>
+      <section class="my_activities">
+        <h1>Mis actividades favoritas</h1>
         <div class="container">
           <p></p>
           <div class="content_form">
@@ -106,121 +106,63 @@
                 <button id="add_button">Agregar actividad</button>
               </div>
             </form>
+            <div class="link_content">
+              <span>Puede copiar estos links</span>
+              <div class="link-copy">
+                <div class="">
+                  <span class="link_img">../assets/images/card.jpeg</span>
+                  <button onclick="copyToClip(this)">Copiar</button>
+                </div>
+                <div class="">
+                  <span class="link_img">../assets/images/card2.jpeg</span>
+                  <button onclick="copyToClip(this)">Copiar</button>
+                </div>
+                <div class="">
+                  <span class="link_img">../assets/images/card3.jpeg</span>
+                  <button onclick="copyToClip(this)">Copiar</button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div id="container_activities" class="content_activities">
-            <div class="card_activity">
-              <div class="card_content">
-                <div class="card_inf">
-                  <p class="card_title">Me gusta correr</p>
-                  <p class="card_description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Scelerisque purus semper eget duis. Quis blandit
-                    turpis cursus in hac habitasse platea. Pellentesque eu
-                    tincidunt tortor aliquam nulla facilisi.
-                  </p>
-                </div>
-                <div class="card_img">
-                  <img src="./assets/images/card.jpeg" alt="" />
-                </div>
-                <div class="card_button">
-                  <div class="hola"><button class="edit">Edit</button></div>
-                  <div><button class="delete">Delete</button></div>
-                </div>
-              </div>
-            </div>
-            <div class="card_activity">
-              <div class="card_content">
-                <div class="card_inf">
-                  <p class="card_title">Me gusta correr</p>
-                  <p class="card_description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Scelerisque purus semper eget duis. Quis blandit
-                    turpis cursus in hac habitasse platea. Pellentesque eu
-                    tincidunt tortor aliquam nulla facilisi.
-                  </p>
-                </div>
-                <div class="card_img">
-                  <img src="./assets/images/card.jpeg" alt="" />
-                </div>
-                <div class="card_button">
-                  <button class="edit">Edit</button>
-                  <button class="delete">Delete</button>
-                </div>
-              </div>
-            </div>
-            <div class="card_activity">
-              <div class="card_content">
-                <div class="card_inf">
-                  <p class="card_title">Me gusta correr</p>
-                  <p class="card_description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Scelerisque purus semper eget duis. Quis blandit
-                    turpis cursus in hac habitasse platea. Pellentesque eu
-                    tincidunt tortor aliquam nulla facilisi.
-                  </p>
-                </div>
-                <div class="card_img">
-                  <img src="./assets/images/card.jpeg" alt="" />
-                </div>
-                <div class="card_button">
-                  <div><button class="edit">Edit</button></div>
-                  <div><button class="delete">Delete</button></div>
-                </div>
-              </div>
-            </div>
-            <div class="card_activity">
-              <div class="card_content">
-                <div class="card_inf">
-                  <p class="card_title">Me gusta correr</p>
-                  <p class="card_description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Scelerisque purus semper eget duis. Quis blandit
-                    turpis cursus in hac habitasse platea. Pellentesque eu
-                    tincidunt tortor aliquam nulla facilisi.
-                  </p>
-                </div>
-                <div class="card_img">
-                  <img src="./assets/images/card.jpeg" alt="" />
-                </div>
-                <div class="card_button">
-                  <div class="hola"><button class="edit">Edit</button></div>
-                  <div><button class="delete">Delete</button></div>
-                </div>
-              </div>
-            </div>
-            <div class="card_activity">
-              <div class="card_content">
-                <div class="card_inf">
-                  <p class="card_title">Me gusta correr</p>
-                  <p class="card_description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Scelerisque purus semper eget duis. Quis blandit
-                    turpis cursus in hac habitasse platea. Pellentesque eu
-                    tincidunt tortor aliquam nulla facilisi.
-                  </p>
-                </div>
-                <div class="card_img">
-                  <img src="./assets/images/card.jpeg" alt="" />
-                </div>
-                <div class="card_button">
-                  <div><button class="edit">Edit</button></div>
-                  <div><button class="delete">Delete</button></div>
-                </div>
-              </div>
-            </div>
+
+          <div id="container_activities" class="content_activities add_card">
+            <p class="no_activity">No hay actividades</p>
           </div>
         </div>
       </section>
-      <div class="modal_edit">
-        <div class="content_modal">hola</div>
+      <div class="modal_edit" id="modal_edit">
+        <div class="content_modal">
+          <form>
+            <label for="">Actualizar la información de la actividad:</label>
+            <input
+              id="edit_title"
+              type="text"
+              placeholder="Nombre de la actidad"
+            />
+            <textarea
+              name=""
+              id="edit_description"
+              cols="30"
+              rows="10"
+              placeholder="Descripción de la actividad:"
+            ></textarea>
+            <input
+              id="edit_img"
+              type="text"
+              src=""
+              alt=""
+              placeholder="Link de la imágen:"
+            />
+            <div class="form_button_update">
+              <button class="close" id="close_button">Close</button>
+              <button class="update" id="update_button">Update</button>
+            </div>
+          </form>
+        </div>
       </div>
       <footer></footer>
     </main>
     <script src="scripts/index.js"></script>
+    <script src="scripts/aditional.js"></script>
   </body>
 </html>

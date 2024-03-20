@@ -20,12 +20,21 @@
   font-style: normal;
 }
 
-body,
-textarea {
+body {
   background: #1c1c1c;
   color: #f8fafc;
   font-family: "Inter", sans-serif;
   font-weight: normal;
+}
+textarea {
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+  color: #f8fafc;
+  max-width: 100%;
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 
 header {
@@ -117,6 +126,14 @@ header {
   color: #9f9f9f;
 }
 
+.my_activities h1 {
+  font-size: 35px;
+  font-weight: 400;
+  padding-top: 30px;
+  color: #9f9f9f;
+  text-align: center;
+}
+
 .skills_content:hover {
   box-shadow: 0px 1px 11px 1px #ffffff42;
 }
@@ -168,6 +185,8 @@ form input:focus-visible {
 }
 .form_button {
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 button {
@@ -186,6 +205,38 @@ button:hover {
   background-color: #a563fd;
   color: #1c1c1c;
 }
+.link_content {
+  padding-top: 30px;
+}
+.link_content span {
+  color: #767676;
+  font-size: 14px;
+}
+.link-copy {
+  margin-top: 7px;
+  border: 2px solid #303031;
+  border-radius: 13px;
+  padding: 10px 0;
+}
+.link-copy div {
+  color: #767676;
+  padding-bottom: 4px;
+  font-size: 14px;
+}
+
+.link-copy button {
+  border-color: #7b86953d;
+  color: #e5e8ed3d;
+  font-size: 14px;
+  padding: 0;
+  float: initial;
+  padding: 2px 6px;
+}
+.link-copy button:hover {
+  background: #e5e8ed3d;
+  color: #1c1c1c;
+}
+
 /* en form style */
 
 .content_activities {
@@ -193,6 +244,27 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   padding: 0 30px;
+  justify-content: initial;
+  align-items: initial;
+  border: 0;
+  border-radius: 0;
+  margin-left: initial;
+}
+
+.content_activities.add_card {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 30px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #303031;
+  border-radius: 13px;
+  margin-left: 22px;
+}
+
+.content_activities .no_activity {
+  color: #565656;
 }
 
 /* card style */
@@ -217,8 +289,8 @@ button:hover {
   overflow: hidden;
 }
 
-.card_img img {
-  max-width: 100%;
+.card_img .card_img_img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 13px;
@@ -278,6 +350,27 @@ button:hover {
   color: #1c1c1c;
 }
 
+.form_button_update .update {
+  border-color: #18c964;
+  color: #18c964;
+  font-size: 15px;
+  margin-left: 10px;
+}
+.form_button_update .update:hover {
+  background: #18c964;
+  color: #1c1c1c;
+}
+.form_button_update .close {
+  border-color: #3f3f46;
+  color: #3f3f46;
+  font-size: 15px;
+  margin-left: 10px;
+}
+.form_button_update .close:hover {
+  background-color: #424242;
+  color: #212121;
+}
+
 /* animation img */
 @keyframes floatAnimation {
   0% {
@@ -295,9 +388,22 @@ button:hover {
 
 /* modal style */
 .modal_edit {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  background: #231d2b94;
+  background: #0f0c12e8;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  overflow: hidden;
+}
+
+.content_modal {
+  width: 25%;
+  background: #212121;
+  padding: 29px;
+  border-radius: 20px;
 }
