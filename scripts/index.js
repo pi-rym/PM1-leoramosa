@@ -36,24 +36,7 @@ class Repository {
   }
 }
 
-// const RepositoryLeo = new Repository();
-// //Prueba de push
-// RepositoryLeo.createActivity("Leo", "ramos", "imgleo");
-// console.log(RepositoryLeo);
-// RepositoryLeo.createActivity("martin", "ramos", "imgleo");
-// console.log(RepositoryLeo);
-// RepositoryLeo.deleteActivity(0);
-// console.log(RepositoryLeo);
-
 const repository = new Repository();
-
-//funcion button delete
-// function handlerButtonCardDelete(event) {
-//   const deleteButtonId = event.target.id;
-//   const activityId = deleteButtonId;
-//   repository.deleteActivity(activityId);
-//   allActivities();
-// }
 
 function handlerButtonCardDelete(event) {
   const containerCard = event.target.closest(".card_activity");
@@ -70,72 +53,6 @@ function handlerButtonCardDelete(event) {
     containerActivities.appendChild(noActivityMessage);
   }
 }
-
-function openEditModal(activity) {
-  // Obtener referencia al modal y sus campos de entrada
-  const modal = document.getElementById("modal_edit");
-  const inputTitle = document.getElementById("edit_title");
-  const inputDescription = document.getElementById("edit_description");
-  const inputImg = document.getElementById("edit_img");
-  document.body.classList.add("modal-open");
-
-  modal.dataset.activityId = activity.id;
-
-  // Poner los datos de la actividad en los campos de entrada del modal
-  inputTitle.value = activity.title;
-  inputDescription.value = activity.description;
-  inputImg.value = activity.imgUrl;
-
-  // Mostrar el modal
-  modal.style.display = "flex";
-}
-
-const updateButton = document.getElementById("update_button");
-updateButton.addEventListener("click", function (event) {
-  event.preventDefault(); // Evitar el comportamiento predeterminado del botón
-  const inputTitle = document.getElementById("edit_title");
-  const inputDescription = document.getElementById("edit_description");
-  const inputImg = document.getElementById("edit_img");
-
-  // Obtener el ID de la actividad a editar
-  const activityId = document.getElementById("modal_edit").dataset.activityId;
-
-  // Obtener la actividad correspondiente del repositorio
-  const activityToUpdate = repository.activities.find(
-    (activity) => activity.id === parseInt(activityId)
-  );
-
-  // Actualizar los valores de la actividad con los nuevos valores de los campos de entrada
-  activityToUpdate.title = inputTitle.value;
-  activityToUpdate.description = inputDescription.value;
-  activityToUpdate.imgUrl = inputImg.value;
-
-  // Actualizar la tarjeta HTML de la actividad con los nuevos valores
-  const cardToUpdate = document.getElementById(activityId);
-  const cardTitle = cardToUpdate.querySelector(".card_title");
-  const cardDescription = cardToUpdate.querySelector(".card_description");
-  const cardImg = cardToUpdate.querySelector(".card_img_img");
-  document.body.classList.remove("modal-open");
-
-  cardTitle.innerHTML = inputTitle.value;
-  cardDescription.innerHTML = inputDescription.value;
-  cardImg.src = inputImg.value;
-
-  // Mostrar la actividad actualizada en la consola
-  console.log("Actividad actualizada:", activityToUpdate);
-
-  // Ocultar el modal después de la actualización
-  const modal = document.getElementById("modal_edit");
-  modal.style.display = "none";
-});
-
-const closeButton = document.getElementById("close_button");
-closeButton.addEventListener("click", function (event) {
-  event.preventDefault(); // Evitar el comportamiento predeterminado del botón
-  const modal = document.getElementById("modal_edit");
-  document.body.classList.remove("modal-open");
-  modal.style.display = "none";
-});
 
 function cardActivity(activity) {
   const { id, title, description, imgUrl } = activity;
@@ -155,9 +72,6 @@ function cardActivity(activity) {
   editButton.innerHTML = "Edit";
   editButton.className = "edit";
   editButton.id = id;
-  editButton.addEventListener("click", function () {
-    openEditModal(activity);
-  });
 
   const deleteButton = document.createElement("button");
   deleteButton.innerHTML = "Delete";
@@ -214,7 +128,6 @@ function handlerButtonCard(event) {
   const inputDescription = document.getElementById("area_description");
   const inputImg = document.getElementById("input_img");
   const contentCardG = document.getElementById("container_activities");
-  contentCardG.classList.remove("add_card");
 
   const titleValue = inputTitle.value;
   const areaValue = inputDescription.value;
@@ -222,13 +135,18 @@ function handlerButtonCard(event) {
 
   if (!titleValue || !areaValue || !imgValue) {
     alert("Por favor, todos los campos son obligatorios");
-    contentCardG.classList.add("add_card");
   } else {
     repository.createActivity(titleValue, areaValue, imgValue);
     allActivities();
     inputTitle.value = "";
     inputDescription.value = "";
     inputImg.value = "";
+  }
+
+  if (repository.getAllActivities().length > 0) {
+    contentCardG.classList.remove("add_card");
+  } else {
+    contentCardG.classList.add("add_card");
   }
   console.log(repository);
 }

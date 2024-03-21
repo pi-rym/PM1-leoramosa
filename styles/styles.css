@@ -51,6 +51,38 @@ header {
   padding: 50px 0;
 }
 
+/* about style */
+.about .container {
+  display: block;
+}
+.about .about_dev {
+  font-size: 50px;
+  background-image: radial-gradient(
+    69.86% 2796.42% at 85% 50%,
+    hsla(0, 0%, 96%, 0.53) 0,
+    #fff 100%
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding-bottom: 50px;
+}
+
+.about .about_me {
+  font-size: 35px;
+  font-weight: 400;
+  padding-bottom: 30px;
+  color: #9f9f9f;
+}
+
+.about .about_description {
+  font-size: 26px;
+  line-height: 38px;
+  color: #b5b4b4;
+  text-align: justify;
+}
+/* about style */
+
 .dev_content {
   text-align: left;
 }
@@ -280,6 +312,11 @@ button:hover {
   border-radius: 13px;
   display: flex;
   flex-direction: column;
+  transition: all 0.4s ease-in-out;
+}
+
+.card_content:hover {
+  box-shadow: 0px 1px 11px 1px #ffffff42;
 }
 
 .card_img {
@@ -339,11 +376,20 @@ button:hover {
   color: #1c1c1c;
 }
 .card_button .edit {
+  border-color: #7f7f7f;
+  color: #7f7f7f;
+  font-size: 15px;
+  margin-left: 10px;
+  pointer-events: none;
+  background: #393838;
+}
+/* .card_button .edit {
   border-color: #f5a524;
   color: #f5a524;
   font-size: 15px;
   margin-left: 10px;
-}
+  pointer-events: none;
+} */
 
 .card_button .edit:hover {
   background: #f5a524;
